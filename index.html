@@ -1,179 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Suman Babu Katel</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: black;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+/* Fixed Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: green;
+  z-index: 10;
+  padding: 0px 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav ul {
+  list-style: none;
+  display: inline;
+  justify-content: left;
+  gap: 2px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  display: flex;
+}
+
+/* Change background when scrolling */
+.scrolled {
+  background-color: rgba(51, 51, 51, 0.9); /* Slight transparency for effect */
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    text-align: center;
+    background-color: green;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%px;
+    display: none;
+    padding: 0x 0;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    header nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    header nav ul li {
+      display: inline;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1500x600') center/cover no-repeat;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      animation: fadeIn 2s ease-out 1s;
+    }
+
+    .hero .btn {
+      background-color: #ff4b5c;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      animation: fadeIn 2s ease-out 2s;
+    }
+
+    /* Animation for the welcome text */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Circular Image Styling */
+    .circular-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 20px;
+      animation: rotateImage 3s linear ;
+    }
+
+    /* Image rotation animation */
+    @keyframes rotateImage {
+      0% {
+        transform: rotate(90deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    section {
+      padding: 50px 0;
+    }
+
+    #about {
+      background-color: #fff;
+      text-align: left;
+    }
+
+    #about p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    #portfolio .projects {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .projects .project {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      text-align: center;
+    }
+
+    .projects .project img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    } 
+    .projects .project iframe {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .projects .project h3 {
+      margin-top: 15px;
+      font-size: 1.5rem;
+    }
+
+    #gallery {
+      background-color: #fff;
+      text-align: left;
+      padding: 50px 0;
+    }
+
+    #gallery h2 {
+      margin-bottom: 20px;
+    }
+
+     #gallery .gallery-images {
+      display: inline;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    #gallery .gallery-images img {
+      width: 400px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    #contact {
+      background-color: #333;
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #contact form input, 
+    #contact form textarea {
+      padding: 10px;
+      width: 300px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #contact form button {
+      background-color: #ff4b5c;
+      color: #fff;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    footer ul {
+      list-style-type: none;
+      margin-bottom: 20px;
+    }
+
+    footer ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer .social-links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    footer .social-links a:hover {
+      color: #ff4b5c;
+    }
+  </style>
+</head>
 <body>
-<h1>Welcome To My Portfolio</h1>
-<style>
-h1{
- padding: 10px;
-background-color: black;
-color: white;
-text-align: center;
-}
-nav{
-overflow: hidden;
-display: inline;
-padding-top: 6px;
-background-color: white;
+  <!-- Header Section -->
+  <header>
 
-}
-a{ color: black;
-text-decoration: none;
-}
-nav a:hover{
- background-color: black;
- color: white;
-}
-</style>
-<nav>
-<a href="index.html">Home</a>
-<a href="aboutme.html">About Me</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
-</nav>
-</body>
-    <body id="page-top">
-        <!-- Masthead-->
-        <header class="masthead bg-secondary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="sumanbabukatel.jpg" alt="..." />
-                <!-- Masthead Heading-->
-                <h3 class="masthead-heading text-uppercase mb-0">SuMAN KaTEL</h3>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">A BBM Student at Bhaktapur Multiple Campus, Tribhuban University </p>
+   <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
 
-              </header>
-   <footer>
-<div class="about-container">
-        <h2>About Me</h2>
-<style>
-h2{
- padding:20px;
-background-color: black;
-color: white;
-text-align: left;
-}
-</style>
-        <p title="About Me">Hello! I'm <b>Suman katel</b>, a passionate web developer with a love for creating beautiful and functional websites. 
-I specialize in front-end development and have experience with various web technologies. In my free time, I enjoy learning new programming languages, exploring design trends, and contributing to open-source projects.
-        <ul> <br><b>Name:</b> Suman katel
-             <br><b>Degree of major:</b> Business management
-             <br><b>Profession:</b> Student
-             <br><b>Collage:</b> Bhaktapuk Multiple Campus</p>
-             <br><b>Skills:</b> Graphic Designing, Digital Marketing, Video Editing and Managerial skills</p>
+    <div class="hero">
+      <h1>Welcome to My Portfolio</h1>
+      <p>I'm Suman Katel a BBM Student at Bhaktapur Multiple Campus, Tribhuban University</p>
+      <a href="#portfolio" class="btn">See My Work</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <img src="sumanbabukatel.jpg" alt="Profile Image" class="circular-image">
+      <p title="About Me">Hello! I'm <b>Suman katel</b>, a passionate web developer with a love for creating beautiful and functional websites. I specialize in front-end development and have experience with various web technologies.<br> 
+In my free time, I enjoy learning new programming languages, exploring design trends, and contributing to open-source projects.
+         <ul> <br><b>Name: Suman Katel</b>
+             <br><b>Degree of major: Business management</b>
+             <br><b>Profession: Student</b> 
+             <br><b>Collage:  Bhaktapuk Multiple Campus</b></p>
+             <br><b>Skills:  Graphic Desigining, Video editing, and UI/UX design</b></p>
 </ul>
     </div>
-<h2>Gallery</h2>
-<style>
-h2{
- padding:20px;
-background-color: black;
-color: white;
-text-align: left;
-}
-</style>
-<img src="sbk.png" height="100" width="200">
-<img src="katel.png" height="100" width="200">
-<img src="babu.png" height="100" width="200">
-<br><iframe src="suman.mp4" height="100" width="200"></iframe>
-<style>
-   img {
-     margin: 5px;
-     border: 2px solid black;
-     float: buttom;
-     width: 200px;
-}
-</style>
-       
-        <div style="text-align: center;" class="footer-container" >
-            <h2>Contact</h2>
-           <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <style>
-        }
-        .container {
-            max-width: 500px;
-            background: black;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background: #28a745;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background: #218838;
-        }
-    </style>
-</head>
-           
-               <div style="text-align: center;" class="footer-container" >
-            <p><b>Contact me for any inquirie.</b></p>
-         </div>
-<div class="contact-container">
-<div style="text-align: left;" class="footer-container" >
-        <form id="contactForm" action="submit_form.php" method="post">
-            <div class="form-group">
-                <label for="name"><b>Name:</b></label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email"><b>Email or Ph.no:</b></label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="country"><b>Country:</b></label>
-                <select id="country">
-                <option>Nepal</option>
-                <option>India</option>
-                <option>Others</option>
-             </select>
-            </div>
-            <div class="form-group">
-                <label for="subject"><b>Subject:</b></label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message"><b>Message:<b/></label>
-                <textarea id="message" name="message" row="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn"><b>Send Message</b></button>
-        </form>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <iframe src="suman.mp4" height="300" width="500"></iframe>
+          <h3>Project 1</h3>
+          <p>Contact me for attractive thumbnails.</p>
+        </div>
+      </div>
     </div>
-    <script src="script.js"></script>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="gallery-images">
+        <img src="sbk.png" alt="Gallery Image 3">
+        <img src="katel.png" alt="Gallery Image 3">
+        <img src="babu.png" alt="Gallery Image 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+ 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -269,14 +479,13 @@ text-align: left;
         
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; 2024 Suman Babu Katel</small></div>
+            <div class="container"><b>Copyright &copy; 2024 Suman Babu Katel</b></div>
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-    </footer>
-    </body>
+  </footer>
+</body>
 </html>
