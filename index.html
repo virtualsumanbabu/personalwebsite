@@ -28,7 +28,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: black;
+  background-color: green;
   z-index: 10;
   padding: 0px 0;
   transition: background-color 0.3s ease-in-out;
@@ -50,8 +50,8 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 7px;
-  padding: 2px;
+  font-size: 10px;
+  padding: 5px;
   display: flex;
 }
 
@@ -69,7 +69,7 @@ nav ul li a {
     position: absolute;
     top: 0px;
     left: 0;
-    width: 100%px;
+    width: 100%;
     display: none;
     padding: 0x;
   }
@@ -111,7 +111,21 @@ nav ul li a {
       color: #fff;
       text-decoration: none;
       font-size: 18px;
+    } 
+    .download button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #0073e6;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
+
+    .download button:hover {
+      background-color: #005bb5;
+    }
+
 
     .hero {
       background: url('https://via.placeholder.com/1500x600') center/cover no-repeat;
@@ -313,7 +327,7 @@ nav ul li a {
    <div class="container">
       <nav>
         <ul>
-          <li><a href="#about">Home</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#gallery">Gallery</a></li>
@@ -340,7 +354,23 @@ In my free time, I enjoy learning new programming languages, exploring design tr
              <br><b>Degree of major: Business management</b>
              <br><b>Profession: Student</b> 
              <br><b>Collage:  Bhaktapuk Multiple Campus</b></p>
-             <br><b>Skills:  Graphic Designing, Video editing, and UI/UX design</b></p>
+             <br><b>Skills:  Graphic Desigining, Video editing, and UI/UX design</b></p>
+
+<body>
+    <!-- Download Button -->
+    <section class="download">
+      <button onclick="downloadCV()">Download My CV</button>
+    </section>
+  </div>
+
+  <script>
+    function downloadCV() {
+      window.location.href = "cv.jpg";  // Change this path to your actual file
+    }
+  </script>
+</body>
+
+
 </ul>
     </div>
   </section>
